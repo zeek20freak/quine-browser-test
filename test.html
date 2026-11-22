@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Browser Test — Agent-Run Page</title>
+<style>
+  body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 0 16px; }
+  button { font-size: 18px; padding: 10px 20px; cursor: pointer; }
+  #counter { font-size: 48px; font-weight: bold; }
+  #status { color: #555; }
+</style>
+</head>
+<body>
+<h1>Agent-run test page</h1>
+<p id="marker">MARKER: quine-browser-test-2026-11-22</p>
+<p>Counter: <span id="counter">0</span></p>
+<button id="tap">Tap me</button>
+<p id="status">Not tapped yet.</p>
+<script>
+  let n = 0;
+  document.getElementById('tap').addEventListener('click', () => {
+    n++;
+    document.getElementById('counter').textContent = n;
+    document.getElementById('status').textContent = 'Tapped ' + n + ' time(s) at ' + new Date().toISOString();
+  });
+</script>
+</body>
+</html>
